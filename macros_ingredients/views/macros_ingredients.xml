@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (c) 2025 braintec AG (https://braintec.com)
+All Rights Reserved
+Licensed under the Odoo Proprietary License v1.0 (OPL).
+See LICENSE file for full licensing details.
+-->
+
+<odoo>
+    <record id="macros_ingredients_form_view" model="ir.ui.view">
+        <field name="name">macros.ingredient.form.view</field>
+        <field name="model">macros.ingredient</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                        <field name="name"/>
+                        <field name="category_id"/>
+                        <field name="uom_id"/>
+                        <field name="provider"/>
+                        <field name="price"/>
+                        </group>
+                        <group>
+                            <field name="calories"/>
+                            <field name="protein"/>
+                            <field name="fat"/>
+                            <field name="carbs"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="macros_ingredients_list_view" model="ir.ui.view">
+        <field name="name">macros.ingredient.list.view</field>
+        <field name="model">macros.ingredient</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="category_id"/>
+                <field name="uom_id"/>
+                <field name="provider"/>
+                <field name="price"/>
+                <field name="calories"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="macros_ingredients_actions" model="ir.actions.act_window">
+        <field name="name">Ingredients</field>
+        <field name="res_model">macros.ingredient</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_id" ref="macros_ingredients_list_view"/>
+    </record>
+</odoo>
