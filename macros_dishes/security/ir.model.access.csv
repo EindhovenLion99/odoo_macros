@@ -1,0 +1,4 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+access_macros_dish,access_macros_dish,model_macros_dish,base.group_user,1,1,1,1
+access_macros_dish_category,access_macros_dish_category,model_macros_dish_category,base.group_user,1,1,1,1
+access_macros_dish_line,access_macros_dish_line,model_macros_dish_line,base.group_user,1,1,1,1
