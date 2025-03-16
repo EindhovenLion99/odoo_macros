@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (c) 2025 braintec AG (https://braintec.com)
+All Rights Reserved
+Licensed under the Odoo Proprietary License v1.0 (OPL).
+See LICENSE file for full licensing details.
+-->
+
+<odoo>
+    <!-- Macros Menu -->
+    <menuitem id="menu_macros_dish_root" name="Dishes" parent="macros_ingredients.menu_macros_root"/>
+    <menuitem id="menu_macros_dish" name="Dishes" parent="menu_macros_dish_root" action="macros_dishes_actions"/>
+    <menuitem id="menu_macros_dish_categories" name="Categories" parent="menu_macros_dish_root" action="macros_dishes_category_actions"/>
+
+</odoo>

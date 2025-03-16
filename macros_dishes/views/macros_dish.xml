@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (c) 2025 braintec AG (https://braintec.com)
+All Rights Reserved
+Licensed under the Odoo Proprietary License v1.0 (OPL).
+See LICENSE file for full licensing details.
+-->
+
+<odoo>
+    <record id="macros_dishes_form_view" model="ir.ui.view">
+        <field name="name">macros.dish.form.view</field>
+        <field name="model">macros.dish</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="category_id"/>
+                            <field name="price"/>
+                            <field name="date"/>
+                        </group>
+                        <group invisible="not ingredient_line_ids">
+                            <field name="calories"/>
+                            <field name="protein"/>
+                            <field name="fat"/>
+                            <field name="carbs"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="ingredient_line_ids">
+                            <list editable="bottom">
+                                <field name="ingredient_id"/>
+                                <field name="quantity"/>
+                                <field name="calories"/>
+                                <field name="protein"/>
+                                <field name="fat"/>
+                                <field name="carbs"/>
+                            </list>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="macros_dishes_list_view" model="ir.ui.view">
+        <field name="name">macros.dish.list.view</field>
+        <field name="model">macros.dish</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="date"/>
+                <field name="category_id"/>
+                <field name="price"/>
+                <field name="calories"/>
+
+            </list>
+        </field>
+    </record>
+
+    <record id="macros_dishes_search_view" model="ir.ui.view">
+        <field name="name">macros.dish.search.view</field>
+        <field name="model">macros.dish</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="date"/>
+                <field name="category_id"/>
+                <field name="price"/>
+                <filter string="Group by Day" domain="[]" context="{'group_by': 'date'}" name="group_by_date"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="macros_dishes_actions" model="ir.actions.act_window">
+        <field name="name">Dishes</field>
+        <field name="res_model">macros.dish</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_id" ref="macros_dishes_list_view"/>
+        <field name="search_view_id" ref="macros_dishes_search_view"/>
+        <field name="context">{'group_by': 'date:day'}</field>
+    </record>
+</odoo>
