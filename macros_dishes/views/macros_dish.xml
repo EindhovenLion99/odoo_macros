@@ -54,7 +54,9 @@ See LICENSE file for full licensing details.
                 <field name="category_id"/>
                 <field name="price"/>
                 <field name="calories"/>
-
+                <field name="protein"/>
+                <field name="fat"/>
+                <field name="carbs"/>
             </list>
         </field>
     </record>
